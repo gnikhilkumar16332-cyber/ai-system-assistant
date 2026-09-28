@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI System Assistant</title>
+</head>
+<body>
 
+<h1>🤖 AI System Assistant</h1>
+
+<input id="command" placeholder="Enter your command">
+<button onclick="runAssistant()">Ask AI</button>
+
+<p id="response"></p>
+
+<script>
+function runAssistant() {
+    let command = document.getElementById("command").value.toLowerCase();
+    let response = "";
+
+    if (command.includes("time")) {
+        response = "Current time: " + new Date().toLocaleTimeString();
+    }
+    else if (command.includes("date")) {
+        response = "Today's date: " + new Date().toLocaleDateString();
+    }
+    else if (command.includes("google")) {
+        window.open("https://www.google.com", "_blank");
+        response = "Opening Google...";
+    }
